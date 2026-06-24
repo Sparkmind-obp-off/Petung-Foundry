@@ -33,7 +33,20 @@
 - ✅ **Persistensi D1** (`migrations/0001`): tabel `leads` + `orders`, PDP-minimal (B9-04 §6).
 - ✅ **12 unit test PASS** mesin-pétung (`npm test`).
 
-> ⚠️ **Kredensial Duitku di `.dev.vars` adalah placeholder sandbox** (di-`.gitignore`). Untuk live, set secret via `wrangler pages secret put DUITKU_MERCHANT_CODE` & `DUITKU_API_KEY` setelah HITL approval harga (gate niche sensitif).
+### 💳 Status Pembayaran (Duitku MoR — terverifikasi PRODUCTION)
+- ✅ **Integrasi Duitku POP terverifikasi LIVE** terhadap endpoint **production** (`api-prod.duitku.com`).
+  Merchant `D20919` → `createInvoice` mengembalikan `HTTP 200 SUCCESS` + `reference` + `paymentUrl` nyata.
+- ✅ **Lifecycle penuh teruji**: checkout → invoice → order `pending` di D1 → callback (signature terverifikasi)
+  → order `paid`. Callback dengan signature salah ditolak `401 Bad Signature`.
+- ⚙️ **ENV**: `DUITKU_ENV=production`. Kredensial disimpan di `.dev.vars` (lokal, **di-`.gitignore`**) dan
+  sebagai **Cloudflare Pages secrets** untuk produksi:
+  ```bash
+  npx wrangler pages secret put DUITKU_MERCHANT_CODE --project-name petung-foundry
+  npx wrangler pages secret put DUITKU_API_KEY --project-name petung-foundry
+  npx wrangler pages secret put DUITKU_ENV --project-name petung-foundry   # isi: production
+  ```
+- ⚠️ **Truth-Lock harga**: nominal masih **draft/HITL** — checkout pakai input nominal manual sampai
+  owner finalisasi harga + legal + copy (gate wajib niche sensitif, B9-03/B9-04).
 
 ## URI Fungsional (paths & parameter)
 
