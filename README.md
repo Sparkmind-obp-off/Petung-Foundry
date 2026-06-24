@@ -4,7 +4,7 @@
 > Bukan jual ramalan — jual **outcome budaya yang rapi & dipersonalisasi** (kalender hari baik,
 > kartu weton, nama usaha selaras weton) dengan disiplin **Truth-Lock** (edukasi-budaya, bukan klaim gaib).
 
-**Status**: ✅ Webapp v1 LIVE (P2–P3 dari roadmap B9-05) · **Doctrine**: D-1 Truth-Lock (MAXIMUM BRUTAL HONEST)
+**Status**: ✅ Webapp v2.0 LIVE (P2–P4 roadmap B9-05: tools + checkout MoR + artefak + D1) · **Doctrine**: D-1 Truth-Lock (MAXIMUM BRUTAL HONEST)
 **Eksekusi dari**: SSOT Batch 9 v2.0 (`PETUNG-FOUNDRY-SSOT-BUNDLE-v2.0`)
 
 ---
@@ -22,8 +22,18 @@
 - ✅ **Mesin-pétung deterministik** (`src/lib/petung.ts`) — `getWeton`, `cekKecocokan`, `cariHariBaik`, `usulNamaUsaha`. 100% deterministik, no API luar, auditable (6 unit test PASS).
 - ✅ **4 tool gratis interaktif**: cek weton, cek kecocokan (jodoh), cari hari baik, usul nama usaha.
 - ✅ **Komponen Disclaimer wajib** (Truth-Lock B9-04) — tampil di footer, hasil tool, & setiap output API.
-- ✅ **Halaman intake/konsultasi** (`/petung/intake`).
+- ✅ **Halaman intake/konsultasi** (`/petung/intake`) — tersimpan ke **D1** (`leads`).
 - ✅ Desain "premium budaya Jawa" (palet sogan/emas/hijau/krem — B9-02 §6), responsif.
+
+## Fitur Baru v2.0
+- ✅ **Checkout MoR Duitku POP** (`/petung/checkout/:slug`) — invoice dibuat server-side (`POST /api/checkout`), pembayaran via Duitku POP (QRIS/VA). Secret HANYA di server (B9-04 §6).
+- ✅ **Callback pembayaran ter-verifikasi signature** (`POST /api/payment/callback`, HMAC SHA256 Web Crypto) → update status `orders` di D1.
+- ✅ **Halaman status pembayaran** (`/petung/pembayaran/return`) + `GET /api/order/:moid`.
+- ✅ **Artefak Proof-of-Outcome print-ready (PDF via window.print)**: `/artefak/kartu-weton`, `/artefak/kalender` — disclaimer kanonik menempel.
+- ✅ **Persistensi D1** (`migrations/0001`): tabel `leads` + `orders`, PDP-minimal (B9-04 §6).
+- ✅ **12 unit test PASS** mesin-pétung (`npm test`).
+
+> ⚠️ **Kredensial Duitku di `.dev.vars` adalah placeholder sandbox** (di-`.gitignore`). Untuk live, set secret via `wrangler pages secret put DUITKU_MERCHANT_CODE` & `DUITKU_API_KEY` setelah HITL approval harga (gate niche sensitif).
 
 ## URI Fungsional (paths & parameter)
 
