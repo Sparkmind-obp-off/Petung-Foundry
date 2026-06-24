@@ -4,8 +4,12 @@
 > Bukan jual ramalan — jual **outcome budaya yang rapi & dipersonalisasi** (kalender hari baik,
 > kartu weton, nama usaha selaras weton) dengan disiplin **Truth-Lock** (edukasi-budaya, bukan klaim gaib).
 
-**Status**: ✅ Webapp v2.0 LIVE (P2–P4 roadmap B9-05: tools + checkout MoR + artefak + D1) · **Doctrine**: D-1 Truth-Lock (MAXIMUM BRUTAL HONEST)
+**Status**: ✅ Webapp v2.0 LIVE di Cloudflare Pages (P2–P4 roadmap B9-05: tools + checkout MoR + artefak + D1) · **Doctrine**: D-1 Truth-Lock (MAXIMUM BRUTAL HONEST)
 **Eksekusi dari**: SSOT Batch 9 v2.0 (`PETUNG-FOUNDRY-SSOT-BUNDLE-v2.0`)
+
+**Production URL**: https://petung-foundry.pages.dev
+**Pembayaran**: Duitku **PRODUCTION** (MoR, merchant `D20919`) — terverifikasi LIVE (`reference` & `app-prod.duitku.com` checkout aktif). Secret di Cloudflare Pages (`DUITKU_MERCHANT_CODE`/`DUITKU_API_KEY`/`DUITKU_ENV`), bukan di repo.
+**Database**: Cloudflare D1 `petung-foundry-production` (`3eb5c42e-…`) — migrations + seed ter-apply (remote), tabel `leads` + `orders`.
 
 ---
 
