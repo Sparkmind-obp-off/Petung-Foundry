@@ -125,8 +125,9 @@ export const IntakePage = () => (
       </button>
       <div id="hasil-intake" class="tool-result" hidden></div>
       <p class="price-note" style="margin-top:1rem">
-        <i class="fas fa-circle-info"></i> Demo v1: data tidak disimpan permanen. Pada versi
-        produksi, intake tersimpan & checkout via QRIS/VA (MoR Oasis BI Pro).
+        <i class="fas fa-circle-info"></i> Datamu tersimpan aman (Cloudflare D1) & disimpan
+        minimal sesuai UU PDP. Setelah konsultasi, kamu bisa langsung checkout via QRIS/VA
+        (MoR Oasis BI Pro / Duitku).
       </p>
     </div>
   </ToolShell>

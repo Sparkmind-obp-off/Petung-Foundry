@@ -3,5 +3,17 @@
   "name": "petung-foundry",
   "compatibility_date": "2024-12-01",
   "compatibility_flags": ["nodejs_compat"],
-  "pages_build_output_dir": "./dist"
+  "pages_build_output_dir": "./dist",
+
+  // D1 Database — persistensi leads + orders (B9-05 §4)
+  // Local dev pakai --local (SQLite otomatis di .wrangler/state/v3/d1).
+  // database_id diisi setelah `wrangler d1 create petung-foundry-production`
+  // pada fase deploy (butuh CLOUDFLARE_API_TOKEN).
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "petung-foundry-production",
+      "database_id": "placeholder-isi-saat-deploy"
+    }
+  ]
 }

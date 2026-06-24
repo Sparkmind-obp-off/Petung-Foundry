@@ -220,4 +220,26 @@ h1, h2, h3, h4 { font-family: 'Georgia', 'Inter', serif; letter-spacing: -0.01em
   .etika-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .nav-links { display: none; }
+  .checkout-grid { grid-template-columns: 1fr !important; }
 }
+
+/* ── Checkout & Plan buy ── */
+.plan-buy { margin-left: .6rem; white-space: nowrap; }
+.checkout-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 1.5rem; max-width: 1140px; margin: 0 auto; align-items: start; }
+.co-title { color: var(--hijau); margin: 0 0 .8rem; font-size: 1.15rem; }
+.co-summary { background: var(--krem-dark, #f0e7d6); border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1rem; }
+.co-row { display: flex; justify-content: space-between; gap: 1rem; padding: .35rem 0; font-size: .9rem; border-bottom: 1px dashed rgba(0,0,0,.08); }
+.co-row:last-child { border-bottom: none; }
+.co-row span:first-child { color: var(--muted); }
+.co-isi { text-align: right; max-width: 60%; font-size: .82rem; }
+.checkout-warn { background: #fff4e0; border: 1px solid var(--emas-soft); color: #7a5a1e; border-radius: 10px; padding: .8rem 1rem; font-size: .85rem; margin-bottom: 1rem; }
+.checkout-warn i { color: var(--emas); }
+.checkout-disclaimer { display: flex; gap: .7rem; background: #f3f7f1; border-left: 3px solid var(--hijau); border-radius: 0 8px 8px 0; padding: .8rem 1rem; margin-top: 1rem; align-items: flex-start; }
+.checkout-disclaimer i { color: var(--hijau); margin-top: .2rem; }
+.checkout-disclaimer p { margin: 0; font-size: .82rem; color: var(--muted); line-height: 1.5; }
+
+/* ── Halaman return ── */
+.return-icon { font-size: 3.5rem; margin-bottom: .5rem; }
+.return-icon.ok { color: #3d8a52; }
+.return-icon.fail { color: #c0573e; }
+.return-icon.pending { color: var(--emas); }

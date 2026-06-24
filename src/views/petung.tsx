@@ -99,6 +99,12 @@ export const PetungDetail = ({ solution }: { solution: Solution }) => {
                     <small>{p.isi}</small>
                   </div>
                   <span class="plan-price">{p.priceDraft}</span>
+                  <a
+                    href={`/petung/checkout/${s.slug}?plan=${p.mode}`}
+                    class="btn btn-primary btn-sm plan-buy"
+                  >
+                    <i class="fas fa-qrcode"></i> Pesan
+                  </a>
                 </div>
               ))}
             </div>
@@ -124,8 +130,11 @@ export const PetungDetail = ({ solution }: { solution: Solution }) => {
                 <span class="skill-tag">{sk}</span>
               ))}
             </div>
-            <a href="/petung/intake" class="btn btn-primary btn-block" style="margin-top:1rem">
-              <i class="fas fa-paper-plane"></i> Konsultasi / Mulai
+            <a href={`/petung/checkout/${s.slug}`} class="btn btn-primary btn-block" style="margin-top:1rem">
+              <i class="fas fa-qrcode"></i> Pesan & Bayar (QRIS/VA)
+            </a>
+            <a href="/petung/intake" class="btn btn-outline btn-block" style="margin-top:.5rem">
+              <i class="fas fa-paper-plane"></i> Konsultasi dulu
             </a>
           </div>
           <TrustStrip />
